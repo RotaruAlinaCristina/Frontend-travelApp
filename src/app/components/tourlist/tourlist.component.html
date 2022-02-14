@@ -1,0 +1,80 @@
+<!--CARD tour-->
+<div class="container" id="main-container">
+  <button mat-fab color="primary" routerLink="/newTour" class="example-label">
+    <mat-icon>add</mat-icon>
+  </button>
+  <div class="row">
+    <div *ngFor="let tour of tours" class="col-md-6 col-xl-3">
+      <div class="card m-b-30">
+        <div class="card-body row">
+          <div class="Image">
+            <img
+              src="/assets/image/timeToTravel.jpg"
+              class="img-thumbnail"
+              alt="..."
+            />
+          </div>
+          <div class="col-10 card-title align-self-center mb-0">
+            <h1 solid>{{ tour.arrivalCity.name }}</h1>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            {{ tour?.departureDate }} - {{ tour.dateOfReturn }}
+            <mat-icon class="float-right">access_time</mat-icon>
+          </li>
+          <li class="list-group-item">
+            Departure City : {{ tour.departureCity.name }}
+            <mat-icon class="float-right">airplanemode_active</mat-icon>
+          </li>
+        </ul>
+        <div class="card-body">
+          <div class="float-right btn-group btn-group-sm">
+            <!--Details-->
+            <button
+              (click)="showTheDetails(tour.id)"
+              routerLink="[tour.id, 'view']"
+              mat-button
+              color="accent"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Details"
+            >
+              <mat-icon class="material-icons-outlined">
+                <span class="material-icons-outlined"> menu_book </span>
+              </mat-icon>
+            </button>
+            <!--Edit-->
+            <button
+              href="#"
+              (click)="updateTour(tour.id)"
+              
+              mat-button
+              color="primary"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Edit"
+            >
+              <mat-icon class="material-icons-outlined"> edit </mat-icon>
+            </button>
+
+            <!--DELETE-->
+            <button
+              type="button"
+              (click)="deleteTour(tour.id)"
+              mat-button
+              color="warn"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Delete"
+            >
+              <mat-icon class="material-icons-outlined"
+                >delete_outline</mat-icon
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

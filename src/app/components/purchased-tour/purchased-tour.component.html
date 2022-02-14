@@ -1,0 +1,107 @@
+<div class="container" imageScr="src\image\background-edit-tour.jpg">
+  <body class="card-header">
+    <h1>Purchased Tour</h1>
+  </body>
+
+  <form [formGroup]="formPuschased" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="userName">Username :</label>
+      <input
+        formControlName="userName"
+        id="userName"
+        type="text"
+        class="form-control"
+      />
+    </div>
+
+    <span class="selection">
+      <label for="adultSeats">Adult seats :</label>
+      <input
+        formControlName="adultSeats"
+        id="adultSeats"
+        type="text"
+        class="form-control"
+      />
+    </span>
+
+    <span class="form-group">
+      <label for="childrenSeats">Children seats :</label>
+      <input
+        formControlName="childrenSeats"
+        id="childrenSeats"
+        type="text"
+        class="form-control"
+      />
+    </span>
+
+
+    <div class="form-group">
+      <label for="tour">Tour ID:</label>
+      <input
+        formControlName="tour"
+        id="tour"
+        type="number"
+        (ngValue)="tour.id"
+        class="form-control"
+      />
+      <!-- {{tour.id| json}} -->
+    </div>
+
+    <div class="form-group">
+      <label for="user">User ID:</label>
+      <input
+        formControlName="user"
+        id="user"
+        type="number"
+        [(ngModel)]="user1"
+        class="form-control"
+      />
+    </div>
+
+    <!-- <div class="form-group">
+      <label for="tour">Tour ID:</label>
+      <input
+        formControlName="tour1.id"
+        id="tour"
+        type="text"
+        class="form-control"
+      />
+    </div> -->
+
+
+    <!-- <div class="form-group">
+      <label for="user">User ID:</label>
+      <input
+        formControlName="user"
+        id="user"
+        type="text"
+        class="form-control"
+      />
+    </div> -->
+
+    <!-- <div class="item">
+      <label for="user" class="form-label">User </label>
+      <select
+        formControlName="user"
+        class="form-control"
+        id="user"
+        placeholder
+        aria-describedby="user"
+      >
+      <option>--Select User--</option>
+      <option *ngFor="let user of users" [ngValue]="user">
+        {{ user.name }}
+      </option>
+      </select>
+    </div> -->
+
+    <button
+      class="btn btn-primary"
+      type="submit"
+      
+    >
+      Buy
+    </button>
+    <button href="#" routerLink="/profile" class="btn btn-primary">Back</button>
+  </form>
+</div>

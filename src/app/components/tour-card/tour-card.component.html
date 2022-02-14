@@ -1,0 +1,63 @@
+<div class="last-minute__title">
+  <h1 fxLayoutAlign="center">Your tour details</h1>
+</div>
+
+<div class="column" *ngIf="tour" fxLayoutAlign="center">
+  <mat-card>
+    <img src="/assets/image/travel-details.jpg" alt="image" />
+  </mat-card>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title class="title">
+        <h2>
+          {{ tour.departureCity.name }} - {{ tour.arrivalCity.name }}
+        </h2></mat-card-title
+      >
+    </mat-card-header>
+
+    <mat-card-content>
+      <div>
+        <mat-icon class="material-icons-outlined">
+          <span class="material-icons-outlined">flight_land</span>
+        </mat-icon>
+        Arrival City: {{ tour.arrivalCity.name }}
+      </div>
+      <div>
+        <mat-icon class="material-icons-outlined">
+          <span class="material-icons-outlined">event</span>
+        </mat-icon>
+        Period: {{ tour.departureDate | date }} - {{ tour.dateOfReturn | date }}
+      </div>
+      <div>
+        <mat-icon class="material-icons-outlined">
+          <span class="material-icons-outlined">paid</span>
+        </mat-icon>
+        Price perAdult: {{ tour.priceAdult }}
+      </div>
+      <div>
+        <mat-icon class="material-icons-outlined">
+          <span class="material-icons-outlined"> child_care</span>
+        </mat-icon>
+        Price perChildren: {{ tour.priceChildren }}
+      </div>
+      <div>
+        <mat-icon class="material-icons-outlined">
+          <span class="material-icons-outlined">hotel</span>
+        </mat-icon>
+        Hotel: {{ tour.hotel.name }}
+      </div>
+    </mat-card-content>
+    <div fxLayoutAlign="center">
+      <button mat-button color="accent" routerLink="/home">Back</button>
+      <button
+        mat-button
+        color="info"
+        class="button"
+        (click)="showpPurchasedTour(tour.id)"
+        routeLink="/purchased:id"
+      >
+        Buy
+      </button>
+    </div>
+  </mat-card>
+</div>

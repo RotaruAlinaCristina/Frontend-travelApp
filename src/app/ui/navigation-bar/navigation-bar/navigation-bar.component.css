@@ -1,0 +1,51 @@
+.header {
+    background-size: cover;
+    height: 40px;
+  }
+
+  mat-toolbar{
+    background: rgba(0, 59, 39, 0.7);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+  }
+
+  mat-toolbar a {
+    text-decoration: none;
+    color: white;
+    margin-right: 30px;
+    text-shadow: black 2px, 2px, 2px, 2px;
+  }
+
+  mat-toolbar a:hover {
+    color: rgb(180, 180, 180);
+  }
+
+  mat-toolbar ul li div {
+    margin-right: 30px;
+  }
+
+  .navigation-items{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .logo {
+    font-size: 27px;
+    font-family: 'Libre Barcode 39 Text', serif;
+  }
+
+  .active-link {
+    color: rgb(233, 188, 106) !important;
+    border-bottom: 2px #fff solid;
+  }
+  
+  #firstName {
+    color:  rgb(233, 188, 106);
+    padding-right: 10px;
+  }
+
+
+
+

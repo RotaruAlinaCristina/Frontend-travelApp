@@ -1,0 +1,56 @@
+
+
+<div class="header" fxFlex fxLayout>
+  
+    <mat-toolbar>
+      <!-- Logo & navigation -->
+      <div fxFlex fxLayout>
+        <div class="navigation-item logo">
+          <a routerLink="/home" routerLinkActive="active-link"> 
+            <mat-icon class="material-icons-outlined">travel_explore</mat-icon>
+            {{'TRAVEL APP' }}
+          </a>
+        </div>
+  
+        <ul fxLayout class="navigation-items" fxHide.lt-md>
+          <li><a routerLink="/home" routerLinkActive="active-link">HOME</a></li>
+          <li><a routerLink="/last-minute" routerLinkActive="active-link">LAST MINUTE</a></li>
+          <li><a routerLink="/offers" routerLinkActive="active-link">SPECIAL OFFERS</a></li>
+          <li><a routerLink="/summer" routerLinkActive="active-link">SUMMER 2022</a></li>
+          
+        </ul>
+
+        <ul fxLayout class="navigation-items" fxHide.lt-md>
+          <li *ngIf="showAdminBoard"><a href="/tours" routerLinkActive="active-link">{{ 'TOURS' }}</a></li>
+        </ul>
+       
+        <button mat-button [matMenuTriggerFor]="menu" fxHide fxShow.lt-md>Menu</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/last-minute">{{ 'LAST MINUTE' }}</button>
+          <button mat-menu-item routerLink="/offers">{{'SPECIAL OFFERS'}}</button>
+          <button mat-menu-item routerLink="/summer">{{'SUMMER 2022'}}</button>
+          <button mat-menu-item *ngIf="showAdminBoard" routerLink="/tours">{{ 'TOURS' }}</button>
+        </mat-menu>
+      </div>
+    
+          <ul fxLayout class="navigation-items" fxHide.lt-md *ngIf="!isLoggedIn">
+            <li class="nav-item">
+              <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a href="/login" class="nav-link" routerLink="login">Login</a>
+            </li>
+          </ul>
+      
+          <ul fxLayout class="navigation-items" fxHide.lt-md *ngIf="isLoggedIn">
+            <li class="nav-item">
+              <a href="/profile" class="nav-link" id=firstName routerLink="profile">{{ username }}</a>
+            </li>
+            <li class="nav-item">
+              <a href class="nav-link" (click)="logout()">LogOut</a>
+            </li>
+          </ul>
+       
+      
+      
+      

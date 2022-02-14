@@ -1,0 +1,15 @@
+/* .jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #b9c9da;
+    border-radius: 0.3rem;
+} */
+
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+   background-color: rgba(128, 127, 126, 0.226);
+    border-radius: 0.3rem;
+      
+}
